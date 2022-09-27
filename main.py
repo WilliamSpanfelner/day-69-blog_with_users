@@ -95,7 +95,27 @@ def admin_only(function):
         elif current_user.id == 1 or current_user.id == 2:
             return function(*args, **kwargs)
         return "<h1>Forbidden</h1><p>Insufficient access privileges to perform this action.</p>", 403
+
     return decorator
+
+
+def sanitize_trial(content):
+    print("sanitize has been called on your content")
+    tag = False
+    quote = False
+    out = ""
+
+    for c in content:
+        if c == '<' and not quote:
+            tag = True
+        elif c == '>' and not quote:
+            tag = False
+        elif (c == '"' or c == "'") and tag:
+            quote = not quote
+        elif not tag:
+            out = out + c
+
+    return out
 
 
 def sanitize(content):
@@ -121,6 +141,7 @@ def sanitize(content):
                            attributes=allowed_attrs,
                            strip=True)
     return cleaned
+
 
 @app.route('/')
 def get_all_posts():
