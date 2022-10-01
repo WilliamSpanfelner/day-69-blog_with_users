@@ -147,7 +147,8 @@ def sanitize(content):
 
 @app.route('/')
 def get_all_posts():
-    posts = BlogPost.query.all()
+    # Display posts in descending order by date
+    posts = BlogPost.query.order_by(BlogPost.date.desc()).all()
     return render_template("index.html", all_posts=posts, yr=YEAR)
 
 
