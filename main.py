@@ -46,7 +46,7 @@ class BlogPost(db.Model):  # child of user # parent to comments
 
     title = db.Column(db.String(250), unique=True, nullable=False)
     subtitle = db.Column(db.String(250), nullable=False)
-    date = db.Column(db.String(250), nullable=False)
+    date = db.Column(db.DATETIME, nullable=False)
     body = db.Column(db.Text, nullable=False)
     img_url = db.Column(db.String(250), nullable=False)
 
@@ -254,7 +254,7 @@ def add_new_post():
             body=sanitize(form.body.data),
             img_url=form.img_url.data,
             author=current_user,
-            date=date.today().strftime("%B %d, %Y")
+            date=date.today()
         )
         db.session.add(new_post)
         db.session.commit()
