@@ -9,6 +9,18 @@
     color: #ad2037;
 }
 
+#bootstrap-overrides .article-body a {
+    /* styling for links */
+    color: #1D9BF0;
+    text-decoration: none;
+}
+
+#bootstrap-overrides .article-body a:hover{
+    /* styling for links */
+    color: #1D9BF0;
+    text-decoration: currentcolor solid underline;
+}
+
 img {
     width: 100%;
 }
@@ -16,4 +28,8 @@ img {
 #header-image {
     background-size: cover;
     background-position: left;
+}
+
+#page-indicator {
+    font-size: 0.7rem;
 }
