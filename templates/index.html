@@ -41,15 +41,29 @@
         <hr>
         {% endfor %}
 
-        <!-- New Post -->
-<!--        {% if current_user.id == 1: %}-->
-<!--          <div class="clearfix">-->
-<!--            <a class="btn btn-primary float-right rounded-pill" href="{{url_for('add_new_post')}}">Create New Post</a>-->
-<!--          </div>-->
-<!--        {% endif %}-->
       </div>
     </div>
   </div>
-  <hr>
 
+  <nav class="d-flex justify-content-center" aria-label="Page navigation">
+      <ul class="pagination pagination-sm border-light mb-0">
+          <li class="page-item {{ 'disabled' if all_posts.page == 1 }}">
+              <a class="page-link" href="{{ url_for('get_all_posts', page=all_posts.prev_num) }}">Previous</a>
+          </li>
+
+          {% for page_num in all_posts.iter_pages() %}
+          <li class="page-item {{ 'active' if all_posts.page == page_num }}">
+              <a class="page-link" href="{{ url_for('get_all_posts', page=page_num) }}">{{ page_num }}</a>
+          </li>
+          {% endfor %}
+
+          <li class="page-item {{ 'disabled' if all_posts.page == all_posts.pages }}">
+              <a class="page-link" href="{{ url_for('get_all_posts', page=all_posts.next_num) }}">Next</a>
+          </li>
+      </ul>
+  </nav>
+
+  <div id="page-indicator" class="d-flex justify-content-center text-muted ">Showing page {{ all_posts.page }} of {{ all_posts.pages }}</div>
+
+  <hr>
 {% include "footer.html" %}
