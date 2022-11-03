@@ -1,25 +1,84 @@
 /* [How can I override Bootstrap CSS styles?](https://stackoverflow.com/questions/20721248/how-can-i-override-bootstrap-css-styles)*/
-#bootstrap-overrides code {
+:root {
+    --blue: #1D9BF0;
+    --red: #ad2037;
+    --teal: #0085a1;
+    --white: #fff;
+    --mid-dark-grey: #212529;;
+    --lime: rgba(0,255,0,.75);
+}
+
+[id="bootstrap-overrides"] code {
     /* styling for commands */
     color: green;
 }
 
-#bootstrap-overrides tt code{
+[id="bootstrap-overrides"] samp{
     /* styling for errors */
-    color: #ad2037;
+    color: var(--red);
 }
 
-#bootstrap-overrides .article-body a {
+[id="bootstrap-overrides"] .article-body a {
     /* styling for links */
-    color: #1D9BF0;
+    color: var(--blue);
     text-decoration: none;
 }
 
-#bootstrap-overrides .article-body a:hover{
+[id="bootstrap-overrides"] .article-body a:hover{
     /* styling for links */
-    color: #1D9BF0;
+    color: var(--blue);
     text-decoration: currentcolor solid underline;
 }
+
+/* Pagination button styling*/
+
+:is(.pagination, #page-indicator) {
+    font-size: 0.8rem;
+    font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+}
+
+[id="bootstrap-overrides"] .pagination .page-link.active, .active > .page-link {
+    color: var(--white);
+    background-color: var(--teal);
+    border-color: var(--teal);
+}
+
+
+/*
+#bootstrap-overrides .pagination > .active > a {
+    color: var(--white);
+    background-color: var(--teal);
+    border: solid 1px var(--teal);
+}
+
+
+#bootstrap-overrides .active > a) {
+    color: var(--white);
+    background-color: var(--teal);
+    border: solid 1px var(--teal);
+}
+
+#bootstrap-overrides .pagination ~ a {
+  color: var(--lime) !important;
+}
+
+
+
+#bootstrap-overrides .pagination > .active > a {
+    color: var(--white);
+    background-color: var(--teal);
+    border: solid 1px var(--teal);
+}
+
+#bootstrap-overrides .pagination > li > a {
+    color: var(--teal);
+}
+
+#bootstrap-overrides .pagination > .disabled {
+    color: var(--teal);
+}
+*/
+
 
 img {
     width: 100%;
