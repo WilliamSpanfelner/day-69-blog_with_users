@@ -13,82 +13,40 @@
     color: green;
 }
 
-[id="bootstrap-overrides"] samp{
+samp {
     /* styling for errors */
     color: var(--red);
 }
 
-[id="bootstrap-overrides"] .article-body a {
+.article-body a {
     /* styling for links */
     color: var(--blue);
     text-decoration: none;
 }
 
-[id="bootstrap-overrides"] .article-body a:hover{
+.article-body a:hover{
     /* styling for links */
     color: var(--blue);
     text-decoration: currentcolor solid underline;
 }
 
 /* Pagination button styling*/
-
-:is(.pagination, #page-indicator) {
+:is(.pagination, .page-indicator) {
     font-size: 0.8rem;
     font-family: 'Open Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
 }
 
-[id="bootstrap-overrides"] .pagination .page-link.active, .active > .page-link {
+.pagination .page-link.active, .active > .page-link {
     color: var(--white);
     background-color: var(--teal);
     border-color: var(--teal);
 }
 
-
-/*
-#bootstrap-overrides .pagination > .active > a {
-    color: var(--white);
-    background-color: var(--teal);
-    border: solid 1px var(--teal);
-}
-
-
-#bootstrap-overrides .active > a) {
-    color: var(--white);
-    background-color: var(--teal);
-    border: solid 1px var(--teal);
-}
-
-#bootstrap-overrides .pagination ~ a {
-  color: var(--lime) !important;
-}
-
-
-
-#bootstrap-overrides .pagination > .active > a {
-    color: var(--white);
-    background-color: var(--teal);
-    border: solid 1px var(--teal);
-}
-
-#bootstrap-overrides .pagination > li > a {
-    color: var(--teal);
-}
-
-#bootstrap-overrides .pagination > .disabled {
-    color: var(--teal);
-}
-*/
-
-
 img {
     width: 100%;
 }
 
-#header-image {
+.header-image {
     background-size: cover;
     background-position: left;
-}
-
-#page-indicator {
-    font-size: 0.7rem;
 }
