@@ -1,3 +1,4 @@
+![Screenshot](day-69-blog_with_users.png)
 # Blog with users, editing, posting and commenting employing SQLite database.
 - 👋 Hi, I’m @WilliamSpanfelner
 - 👀 I’m interested in using Python with Swift in iOS environments and why it may or may not be desirable.
